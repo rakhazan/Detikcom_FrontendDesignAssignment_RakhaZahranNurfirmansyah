@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  /* Colors */
+  --dongker-color: rgb(32, 64, 154);
+  --dark-color: rgb(33, 36, 39);
+  --yellow-color: rgb(255, 199, 60);
+  --yellow-25-color: rgba(255, 199, 60, 0.25);
+  --orange-color: rgb(255, 154, 60);
+  --orange-25-color: rgba(255, 154, 60, 0.25);
+  --gradient-color: linear-gradient(
+    200deg,
+    rgba(89, 255, 185, 1),
+    rgba(50, 108, 255, 1)
+  );
+  --gradient-hover-color: linear-gradient(
+    20deg,
+    rgba(89, 255, 185, 1),
+    rgba(50, 108, 255, 1)
+  );
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: var(--dark-color);
+}
