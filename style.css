@@ -50,6 +50,13 @@ small {
   font-weight: 700;
   font-size: 1em;
   text-transform: uppercase;
+  border: none;
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
 .btn-bright {
@@ -64,6 +71,31 @@ small {
   color: white;
 }
 
+.btn-action {
+  border-radius: 100px;
+  background: transparent;
+  color: white !important;
+  transition: background ease 500ms;
+  position: relative;
+  overflow: hidden;
+}
+.btn-action::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(240deg, #59ffb9 20%, #326cff 70%);
+  z-index: -1;
+  transition: transform linear 800ms;
+}
+
+.btn-action:hover::before,
+.btn-action:active::before {
+  transform: rotate(-100deg);
+}
+
 /* Card */
 .card {
   border-radius: 32px;
@@ -74,10 +106,72 @@ small {
   padding: 32px;
 }
 
+/* Header */
+header {
+  position: fixed;
+  top: 2rem;
+  width: 100%;
+  z-index: 999;
+}
+
+header .navbar {
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(25px);
+  padding: 1em 2em;
+}
+
+header img {
+  max-width: 200px;
+}
+
+header .navbar .nav-link {
+  font-weight: 600;
+  opacity: 1;
+}
+
+@media screen and (max-width: 769px) {
+  header .navbar {
+    border-radius: 32px;
+    padding: 1rem;
+  }
+
+  header img {
+    max-height: 35px;
+  }
+
+  header ul li {
+    flex: 1 0 auto;
+    text-align: center;
+  }
+
+  .btn-action::before {
+    top: -60vh;
+    width: 100%;
+    height: calc(100vw - 2rem);
+    background: linear-gradient(240deg, #59ffb9 30%, #326cff 60%);
+  }
+}
+
+@media screen and (max-width: 426px) {
+  header .navbar {
+    margin: 0 1rem;
+  }
+
+  .btn-action::before {
+    top: -25vh;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .btn-action::before {
+    top: -17vh;
+  }
+}
+
 /* Hero */
 #hero {
-  min-height: 100vh;
-  height: 1px;
+  min-height: 960px;
   background: url("./images/Hero.png") no-repeat;
   background-size: cover;
   background-position: right center;
@@ -90,7 +184,7 @@ small {
   /* justify-content: center; */
   height: 100%;
   row-gap: 2.5rem;
-  padding-top: 15%;
+  padding-top: 20%;
 }
 
 #hero img {
@@ -100,7 +194,7 @@ small {
 
 @media screen and (max-width: 769px) {
   #hero {
-    background-position-x: 90%;
+    background-position-x: 85%;
   }
 
   #hero img {
@@ -110,6 +204,7 @@ small {
 
 @media screen and (max-width: 426px) {
   #hero {
+    min-height: 943px;
     background: url("./images/hero-mobile.png") no-repeat;
     background-size: cover;
     background-position: top center;
