@@ -470,7 +470,12 @@ header .navbar .nav-link {
     flex-shrink: 0;
   }
 
-  #berita article img {
+  #berita article .frame > div {
+    top: 4px;
+    right: 8px;
+  }
+
+  #berita article .frame > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
